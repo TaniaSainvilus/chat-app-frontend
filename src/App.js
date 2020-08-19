@@ -9,7 +9,6 @@ import UserContext from './context/UserContext';
 
 // const baseUrl = 'http://localhost:3003';
 
-//TODO setup env file for front end
 let baseUrl;
 if (process.env.NODE_ENV === 'development') {
   baseUrl = 'http://localhost:3003';
@@ -18,7 +17,7 @@ if (process.env.NODE_ENV === 'development') {
 }
 console.log('current base URL:', baseUrl);
 
-// Part 5 of MERN stack video...10:33
+
 export default function App() {
   const [userData, setUserData] = useState({
     token: undefined,
