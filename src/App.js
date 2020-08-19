@@ -14,7 +14,7 @@ let baseUrl;
 if (process.env.NODE_ENV === 'development') {
   baseUrl = 'http://localhost:3003';
 } else {
-  baseUrl = 'https://xpense-backend.herokuapp.com';
+  baseUrl = 'https://ventdchatapp-backend.herokuapp.com';
 }
 console.log('current base URL:', baseUrl);
 
