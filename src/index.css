@@ -2,20 +2,39 @@
 
 body, html, #root {
   font-family: 'Roboto', sans-serif;
-  min-width: 380px;
+  min-width: 450px;
   overflow: visible;
+  background:
+  /* linear-gradient(
+      rgba(209, 174, 146, 0.30), 
+      rgba(209, 174, 146, 0.30)
+  ), */
+  url('./public/plant.jpg');
+background-position: 0% 0%;
+background-repeat: no-repeat;
+background-size: cover;
+overflow-x: scroll;
 }
 
 #chat-box {
   box-shadow: inset 4px 8px 16px 0 rgba(0,0,0,0.2);
   border-style: solid 5px black;
-  max-height: calc(100vh - 55px);
+  min-width: 400px;
+  max-height: 500px; 
+  min-height: calc(100vh - 237px);
   overflow: scroll;
   padding: 16px;
+  background-color: white;
 }
 
 .chat-bubble {
-  display:inline-block
+  display:inline-block;
+
+}
+
+.content {
+  /* max-width: calc(100% - 45px); */
+
 }
 
 .icon-btns {
@@ -57,7 +76,7 @@ body, html, #root {
 }
 
 #msg-bar {
-  box-shadow: inset 4px 4px 4px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: inset 2px 2px 2px 0 rgba(0, 0, 0, 0.2);
   height: 55px;
   width: 100%;
   background: #ce8458;
@@ -146,20 +165,33 @@ button, input[type="submit"] {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #ce8458;
+  background-color: #ffffff;
 }
 
-#Header .title {
+#Header #title {
   margin: 0;
   padding: 0 1rem;
-  color: whitesmoke;
-  font-family: 'Russo One', cursive;
-  font-size: 50px;
+  color: #ce8458;
+  font-family: 'Cormorant SC', serif, cursive;
+  font-stretch: expanded;
+  font-size: 55px;
+  text-decoration: unset;
+}
+
+#Header #sub-title {
+  margin: 0;
+  padding: 0 1rem;
+  padding-bottom: 10px;
+  color: #ce8458;
+  font-family: 'Cormorant SC', serif, cursive;
+  font-stretch: condensed;
+  font-size: 20px;
   text-decoration: unset;
 }
 
 #Header .auth {
   height: 100%;
+  float: right;
   display: flex;
 }
 

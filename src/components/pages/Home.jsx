@@ -10,7 +10,7 @@ export default function Home() {
         <div className={userData.user ? "chat-page" : "page"}>
             {userData.user ? (
                 <>
-                <h2>Let's chat {userData.user.username}!</h2>
+                <h3>What's on Your Mind, {userData.user.username}?</h3>
                 <Chat name={userData.user.username} />
                 </>
             ) : (
