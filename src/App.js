@@ -7,7 +7,6 @@ import Login from './components/Authorization/Login';
 import Register from './components/Authorization/Register';
 import UserContext from './context/UserContext';
 
-// const baseUrl = 'http://localhost:3003';
 
 let baseUrl;
 if (process.env.NODE_ENV === 'development') {
