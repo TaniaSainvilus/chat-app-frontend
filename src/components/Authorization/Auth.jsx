@@ -17,7 +17,6 @@ export default function AuthOptions() {
     }
 
     return (
-        //logic for switching the register and login buttons to logout using a ternary...
         <nav className="auth">
             {userData.user ? (
                 <button onClick={logout}>Log out</button>
