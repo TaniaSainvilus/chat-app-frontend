@@ -4,10 +4,10 @@ import UserContext from '../../context/UserContext'
 import Chat from './Chat'
 
 export default function Home() {
-    const { userData } = useContext(UserContext)
+    // const { userData } = useContext(UserContext)
 
     return (
-        <div className={userData.user ? "chat-page" : "page"}>
+        <div className={"chat-page"}>
                             <>
                 <h3>What's on Your Mind?</h3>
                 <Chat name={'user'} />

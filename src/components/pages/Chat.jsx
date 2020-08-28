@@ -81,12 +81,18 @@ class Chat extends React.Component {
     })
     .then(res => res.json(
       )).then(data => {
-        this.socket.emit('message', data);
+        this.socket.emit('message', {
+          name: this.props.name,
+          content: this.state.content
+        });
     
         this.setState((state) => {
           // Update the chat with the user's message and remove the current message.
           return {
-            chat: [...state.chat, data],
+            chat: [...state.chat, {
+              name: this.props.name,
+              content: this.state.content
+            }],
             content: ''
           };
         }, this.scrollToBottom);
@@ -159,8 +165,7 @@ class Chat extends React.Component {
                   <div variant="body1" className="content">
                     {el.content}
                   </div>
-                  {el.name === this.props.name ?
-                  (<div className="icon-btns">
+                  {<div className="icon-btns">
                     <i className="fas fa-trash-alt" onClick={()=> this.msgDelete(el._id)}></i>
                     <i className="fas fa-edit" onClick={() => this.toggleInput(el.content)}></i>
                     <form id="editor" className={isVisible ? "" : "hidden-input"} onSubmit={(evt)=> this.msgEdit(evt, el._id)}>
@@ -169,8 +174,7 @@ class Chat extends React.Component {
                           value={this.state.input} 
                           type="text" id="msg-edit" name="msg-edit"/>
                       </form>
-                  </div>) :
-                  (<></>)} 
+                  </div>} 
                 </div> <br/>
               </>
             );

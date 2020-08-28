@@ -18,41 +18,41 @@ console.log('current base URL:', baseUrl);
 
 
 export default function App() {
-  const [userData, setUserData] = useState({
-    token: undefined,
-    user: undefined,
-  });
+  // const [userData, setUserData] = useState({
+  //   token: undefined,
+  //   user: undefined,
+  // });
 
-  useEffect(() => {
-    const checkLoggedIn = async () => {
-      let token = localStorage.getItem("auth-token");
-      if (token === null) {
-        localStorage.setItem("auth-token", "");
-        token = "";
-      }
-      const tokenRes = await Axios.post(
-        baseUrl + "/user/tokenIsValid",
-        null,
-        { headers: { "x-auth-token": token } }
-      );
-      if (tokenRes.data) {
-        const userRes = await Axios.get(baseUrl + "/user/", {
-          headers: { "x-auth-token": token },
-        });
-        setUserData({
-          token,
-          user: userRes.data,
-        });
-      }
-    };
+  // useEffect(() => {
+  //   const checkLoggedIn = async () => {
+  //     let token = localStorage.getItem("auth-token");
+  //     if (token === null) {
+  //       localStorage.setItem("auth-token", "");
+  //       token = "";
+  //     }
+  //     const tokenRes = await Axios.post(
+  //       baseUrl + "/user/tokenIsValid",
+  //       null,
+  //       { headers: { "x-auth-token": token } }
+  //     );
+  //     if (tokenRes.data) {
+  //       const userRes = await Axios.get(baseUrl + "/user/", {
+  //         headers: { "x-auth-token": token },
+  //       });
+  //       setUserData({
+  //         token,
+  //         user: userRes.data,
+  //       });
+  //     }
+  //   };
 
-    checkLoggedIn();
-  }, []);
+  //   checkLoggedIn();
+  // }, []);
 
   return (
     <>
       <BrowserRouter>
-        <UserContext.Provider value={{ userData, setUserData }}>
+        {/* <UserContext.Provider value={{ userData, setUserData }}> */}
           <Header />
           <div className="container">
             <Switch>
@@ -61,7 +61,7 @@ export default function App() {
               {/* <Route path="/register" render={() => <Register baseUrl={baseUrl} />} /> */}
             </Switch>
           </div>
-        </UserContext.Provider>
+        {/* </UserContext.Provider> */}
       </BrowserRouter>
     </>
   )
