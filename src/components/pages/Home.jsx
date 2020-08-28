@@ -8,7 +8,11 @@ export default function Home() {
 
     return (
         <div className={userData.user ? "chat-page" : "page"}>
-            {userData.user ? (
+                            <>
+                <h3>What's on Your Mind?</h3>
+                <Chat name={'user'} />
+                </>
+            {/* {userData.user ? (
                 <>
                 <h3>What's on Your Mind, {userData.user.username}?</h3>
                 <Chat name={userData.user.username} />
@@ -18,7 +22,7 @@ export default function Home() {
                 <h2>Please login</h2>
                 <Link id="login-link" to="/login">Login</Link>
                 </>
-            )}
+            )} */}
         </div>
     )
 }

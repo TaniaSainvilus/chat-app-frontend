@@ -11,7 +11,7 @@ class Header extends Component {
           <h4 id="sub-title">Your Feelings are Valid</h4>
           {/* <img id="ventd-logo" src={logo} alt="Ventd Logo"></img> */}
         </div>
-        <Auth/>
+        {/* <Auth/> */}
       </header>
     )
   }

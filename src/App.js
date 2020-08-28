@@ -7,26 +7,12 @@ import Login from './components/Authorization/Login';
 import Register from './components/Authorization/Register';
 import UserContext from './context/UserContext';
 
-// Listen on a specific host via the HOST environment variable
-var host = process.env.HOST || '0.0.0.0';
-// Listen on a specific port via the PORT environment variable
-var port = process.env.PORT || 8080;
-
-var cors_proxy = require('cors-anywhere');
-cors_proxy.createServer({
-    originWhitelist: [], // Allow all origins
-    requireHeader: ['origin', 'x-requested-with'],
-    removeHeaders: ['cookie', 'cookie2']
-}).listen(port, host, function() {
-    console.log('Running CORS Anywhere on ' + host + ':' + port);
-});
-
 
 let baseUrl;
 if (process.env.NODE_ENV === 'development') {
   baseUrl = 'http://localhost:3003';
 } else {
-  baseUrl = 'https://ventdchatapp-backend.herokuapp.com';
+  baseUrl = 'https://ventdchatapp-backend.herokuapp.com/';
 }
 console.log('current base URL:', baseUrl);
 
@@ -71,8 +57,8 @@ export default function App() {
           <div className="container">
             <Switch>
               <Route exact path="/" component={Home} />
-              <Route path="/login" render={() => <Login baseUrl={baseUrl} />} />
-              <Route path="/register" render={() => <Register baseUrl={baseUrl} />} />
+              {/* <Route path="/login" render={() => <Login baseUrl={baseUrl} />} /> */}
+              {/* <Route path="/register" render={() => <Register baseUrl={baseUrl} />} /> */}
             </Switch>
           </div>
         </UserContext.Provider>
